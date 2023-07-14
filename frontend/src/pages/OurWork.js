@@ -177,7 +177,7 @@ const OurWork = () => {
                     >
                         <b
                             style={{
-                                marginTop: "3%",
+                                marginTop: "2%",
                                 lineHeight: "48px",
                             }}
                         >
@@ -192,13 +192,13 @@ const OurWork = () => {
                             style={{
                                 // position: "relative",
                                 width: "80%",
-                                // height: "165px",
+                                // height: "30%",
                                 flexShrink: "0",
                                 overflow: "hidden",
                                 objectFit: "cover",
                             }}
                             alt=""
-                            src="../CSSWM/Cosine Ball/180/0/sphere_cartopy/h+wind.gif"
+                            src="../2DVVM/Water/qc+qr+th+u+w.gif"
                         />
                     </div>
 
