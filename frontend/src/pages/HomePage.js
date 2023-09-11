@@ -2,6 +2,7 @@ import { useCallback, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Header from "./Header";
 import styled, { keyframes } from 'styled-components';
+import { CardMedia } from "@mui/material";
 
 const pulse = keyframes`
     0% {
@@ -36,10 +37,9 @@ const HomePage = () => {
         navigate("/our-work");
     }, [navigate]);
 
-    const randomImages = ['../CSSWM/Barotropic/180/sphere_cartopy/zeta.gif', '../CSSWM/Cosine Ball/180/pi:4/sphere_cartopy/h+wind.gif', '../CSSWM/Rossby-Hauwrwitz wave/180/sphere_cartopy/h+wind.gif'];
+    const randomVideos = ['https://www.youtube.com/embed/69U_2NUdaQM', 'https://www.youtube.com/embed/CUv1pX163pQ', 'https://www.youtube.com/embed/G4hVWNGEAEc', 'https://www.youtube.com/embed/zSepHC5psAc', 'https://www.youtube.com/embed/CRdPHsxJojw']
     // eslint-disable-next-line no-unused-vars
-    const [imagePath, setImagePath] = useState(randomImages[Math.floor(Math.random()*randomImages.length)]);
-    
+    const [videoPath, setVideoPath] = useState(randomVideos[Math.floor(Math.random()*randomVideos.length)]);
     
     return (
         <div
@@ -63,20 +63,21 @@ const HomePage = () => {
                         style={{
                             fontSize: "200%",
                             lineHeight: "130%",
-                            color: "#000",
-                            
+                            color: "#000",                            
                         }}  
                     >{`SWM on Cubed Sphere & 2D Cloud Resolving Models`}</b>
                     <hr style={{border: "2.5px solid rgb(6, 44, 123)", borderRadius: "7px 7px 7px 7px"}} />
                 </StyledDiv>
-                <img
-                    style={{
-                        height: "50%",
-                        width: "45%",
-                    }}
-                    alt=""
-                    src={imagePath}
+                
+                <CardMedia
+                    component="iframe"
+                    style={{height: "400px", width: "45%"}}
+                    autoPlay 
+                    controls 
+                    allowFullScreen
+                    src={videoPath}
                 />
+                
             </div>
 
             {/* footer */}
