@@ -26,6 +26,10 @@ const dict = {
     "../CSSWM/Cosine Ball/90/pi:2/sphere_cartopy/h+wind.mov": "https://www.youtube.com/embed/ilVhmg96aUk?si=f6vfhMuLuMsOJAed",
     "../CSSWM/Cosine Ball/90/pi:4/sphere_cartopy/h+wind.mov": "https://www.youtube.com/embed/5Gu_z_GR79I?si=C-xXUyawFsVmogKq",
 
+    "../CSSWM/Cosine Ball/180/0/sphere_cartopy/h+wind.mov": "https://www.youtube.com/embed/SMjYm10Pz2w?si=Vq00M1zAY3JBzhJl",
+    "../CSSWM/Cosine Ball/180/pi:2/sphere_cartopy/h+wind.mov": "https://www.youtube.com/embed/Tdr3qSY0ImI?si=p5Oin-CHkajfhFO4",
+    "../CSSWM/Cosine Ball/180/pi:4/sphere_cartopy/h+wind.mov": "https://www.youtube.com/embed/P7gq98irjXY?si=86zLs_sd4sBBB89N",
+
     "../CSSWM/Rossby-Hauwrwitz wave/180/sphere_cartopy/h+wind.mov": "https://www.youtube.com/embed/dxrctHIMGGY?si=X_EuO40pR1wxmk08",
     "../CSSWM/Rossby-Hauwrwitz wave/90/sphere_cartopy/h+wind.mov": "https://www.youtube.com/embed/Y3y00anPWQs?si=L5im2OXm-3_Yu77B",
     "../CSSWM/Rossby-Hauwrwitz wave/45/sphere_cartopy/h+wind.mov": "https://www.youtube.com/embed/CRdPHsxJojw?si=E7D-g2nmLixebLkd",

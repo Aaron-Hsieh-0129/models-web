@@ -44,7 +44,8 @@ const VVM = () => {
                     flexDirection: "column",
                     justifyContent: "center",
                     alignItems: "center",
-                    padding: "8px"
+                    padding: "8px",
+                    width: "100%"
                 }}
             >
                 <VVMVideo setCase={setCaseVVM} chooseCase={chooseCaseVVM}/>
