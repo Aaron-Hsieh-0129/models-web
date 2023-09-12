@@ -226,10 +226,12 @@ const CsswmVideo = ({chooseCase, setCase}) => {
                     style={{display: "flex", justifyContent: "flex-start"}}
                 >
                     
-                    <p>Resolution  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</p>
-                    <FormControlLabel value="180" control={<Radio {...controlResProp('180')}/>} label="6 x 180 x 180" />
-                    <FormControlLabel value="90" control={<Radio {...controlResProp('90')}/>} label="6 x 90 x 90" />
-                    <FormControlLabel value="45" control={<Radio {...controlResProp('45')}/>} label="6 x 45 x 45" />
+                    <p>Resolution</p>
+                    <div style={{display: "flex", marginLeft: "2%"}}>
+                        <FormControlLabel value="180" control={<Radio {...controlResProp('180')}/>} label="6 x 180 x 180" />
+                        <FormControlLabel value="90" control={<Radio {...controlResProp('90')}/>} label="6 x 90 x 90" />
+                        <FormControlLabel value="45" control={<Radio {...controlResProp('45')}/>} label="6 x 45 x 45" />
+                    </div>
                 </RadioGroup>
             </FormControl>
         )
@@ -250,8 +252,10 @@ const CsswmVideo = ({chooseCase, setCase}) => {
                     style={{display: "flex", justifyContent: "flex-start"}}
                 >
                     
-                    <p>Projection  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</p>
-                    <FormControlLabel value="sphere_cartopy" control={<Radio {...controlProjProp('sphere_cartopy')}/>} label="sphere" />
+                    <p>Projection</p>
+                    <div style={{display: "flex", marginLeft: "2.3%"}}>
+                        <FormControlLabel value="sphere_cartopy" control={<Radio {...controlProjProp('sphere_cartopy')}/>} label="sphere" />
+                    </div>
                     {/* TODO: Establish curvilinear view */}
                     {/* <FormControlLabel value="curvilinear" control={<Radio {...controlProjProp('curvilinear')}/>} label="curvilinear" /> */}
                 </RadioGroup>
@@ -274,9 +278,11 @@ const CsswmVideo = ({chooseCase, setCase}) => {
                     style={{display: "flex", justifyContent: "flex-start"}}
                 >
                     
-                    <p>Coordinate  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</p>
-                    <FormControlLabel value="lonlat" control={<Radio {...controlImgProp('lonlat')}/>} label="lon/lat" />
-                    <FormControlLabel value="xy" control={<Radio {...controlImgProp('xy')}/>} label="x/y" />
+                    <p>Coordinate</p>
+                    <div style={{display: "flex", marginLeft: "2%"}}>
+                        <FormControlLabel value="lonlat" control={<Radio {...controlImgProp('lonlat')}/>} label="lon/lat" />
+                        <FormControlLabel value="xy" control={<Radio {...controlImgProp('xy')}/>} label="x/y" />
+                    </div>
                 </RadioGroup>
             </FormControl>
         )
@@ -297,8 +303,10 @@ const CsswmVideo = ({chooseCase, setCase}) => {
                     style={{display: "flex", justifyContent: "flex-start"}}
                 >
                     
-                    <p>Variable &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</p>
-                    <FormControlLabel value="zeta" control={<Radio {...controlVarProp('zeta')}/>} label="ζ + h + wind" />
+                    <p>Variable</p>
+                    <div style={{display: "flex", marginLeft: "3.7%"}}>
+                        <FormControlLabel value="zeta" control={<Radio {...controlVarProp('zeta')}/>} label="ζ + h + wind" />
+                    </div>
                     {/* <FormControlLabel value="h+wind" control={<Radio {...controlVarProp('h+wind')}/>} label="h + wind" /> */}
                 </RadioGroup>
             </FormControl>
@@ -314,8 +322,10 @@ const CsswmVideo = ({chooseCase, setCase}) => {
                     style={{display: "flex", justifyContent: "flex-start"}}
                 >
                     
-                    <p>Variable &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</p>
-                    <FormControlLabel value="h+wind" control={<Radio {...controlVarProp('h+wind')}/>} label="h + wind" />
+                    <p>Variable</p>
+                    <div style={{display: "flex", marginLeft: "3.7%"}}>
+                        <FormControlLabel value="h+wind" control={<Radio {...controlVarProp('h+wind')}/>} label="h + wind" />
+                    </div>
                 </RadioGroup>
             </FormControl>
         )
@@ -336,10 +346,12 @@ const CsswmVideo = ({chooseCase, setCase}) => {
                     style={{display: "flex", justifyContent: "flex-start"}}
                 >
                     
-                    <p>α (wind direction) &emsp;&emsp;</p>
-                    <FormControlLabel value="0" control={<Radio {...controlAlphaProp('0')}/>} label="0" />
-                    <FormControlLabel value="pi:2" control={<Radio {...controlAlphaProp('pi:2')}/>} label="pi/2" />
-                    <FormControlLabel value="pi:4" control={<Radio {...controlAlphaProp('pi:4')}/>} label="pi/4" />
+                    <p>α (direction)</p>
+                    <div style={{display: "flex", marginLeft: "1%"}}>
+                        <FormControlLabel value="0" control={<Radio {...controlAlphaProp('0')}/>} label="0" />
+                        <FormControlLabel value="pi:2" control={<Radio {...controlAlphaProp('pi:2')}/>} label="pi/2" />
+                        <FormControlLabel value="pi:4" control={<Radio {...controlAlphaProp('pi:4')}/>} label="pi/4" />
+                    </div>
                 </RadioGroup>
             </FormControl>
         )

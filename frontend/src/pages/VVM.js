@@ -1,6 +1,6 @@
 import Header from "./Header";
 import { useState } from "react";
-import Content from "./csswmContent";
+import Content from "./vvmContent";
 import VVMVideo from "./vvmVideo";
 
 const VVM = () => {
@@ -51,7 +51,7 @@ const VVM = () => {
                 <VVMVideo setCase={setCaseVVM} chooseCase={chooseCaseVVM}/>
                 {/* <CsswmVideo setCase={setCase} chooseCase={chooseCase}/> */}
                 
-                {/* <Content chooseCase={chooseCase} /> */}
+                <Content chooseCase={chooseCaseVVM} />
                 
             </div>
         </div>

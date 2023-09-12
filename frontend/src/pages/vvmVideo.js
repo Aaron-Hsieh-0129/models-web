@@ -101,9 +101,11 @@ const VVMVideo = ({chooseCase, setCase}) => {
                     style={{display: "flex", justifyContent: "flex-start"}}
                 >
                     
-                    <p>Variable &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</p>
-                    <FormControlLabel value="qc+qr+th+u+w" control={<Radio {...controlVarProp('qc+qr+th+u+w')}/>} label="qc + qr + θ' + u + w" />
-                    <FormControlLabel value="zeta" control={<Radio {...controlVarProp('zeta')}/>} label="ζ" />
+                    <p>Variable</p>
+                    <div style={{display: "flex", marginLeft: "2%"}}>
+                        <FormControlLabel value="qc+qr+th+u+w" control={<Radio {...controlVarProp('qc+qr+th+u+w')}/>} label="qc + qr + θ' + u + w" />
+                        <FormControlLabel value="zeta" control={<Radio {...controlVarProp('zeta')}/>} label="ζ" />
+                    </div>
                 </RadioGroup>
             </FormControl>
         )
@@ -118,8 +120,10 @@ const VVMVideo = ({chooseCase, setCase}) => {
                     style={{display: "flex", justifyContent: "flex-start"}}
                 >
                     
-                    <p>Variable &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</p>
-                    <FormControlLabel value="qc+qr+th+u+w" control={<Radio {...controlVarProp('qc+qr+th+u+w')}/>} label="θ' + wind" />
+                    <p>Variable</p>
+                    <div style={{display: "flex", marginLeft: "2%"}}>
+                        <FormControlLabel value="qc+qr+th+u+w" control={<Radio {...controlVarProp('qc+qr+th+u+w')}/>} label="θ' + wind" />
+                    </div>
                 </RadioGroup>
             </FormControl>
         )
@@ -140,8 +144,10 @@ const VVMVideo = ({chooseCase, setCase}) => {
                     style={{display: "flex", justifyContent: "flex-start"}}
                 >
                     
-                    <p>Direction &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</p>
-                    <FormControlLabel value="u" control={<Radio {...controlAdvectionProp('u')}/>} label="u" />
+                    <p>Direction</p>
+                    <div style={{display: "flex", marginLeft: "1.6%"}}>
+                        <FormControlLabel value="u" control={<Radio {...controlAdvectionProp('u')}/>} label="u" />
+                    </div>
                     {/* TODO: Fix the video*/}
                     {/* <FormControlLabel value="w" control={<Radio {...controlAdvectionProp('w')}/>} label="w" /> */}
                 </RadioGroup>
