@@ -77,7 +77,7 @@ const OurWork = () => {
                         alignItems: "center",
                         marginTop: "5%",
                         gap: "15%",
-                        marginBottom: "4%"
+                        marginBottom: "1.5%"
                     }}
                 >
                     <b
@@ -85,20 +85,17 @@ const OurWork = () => {
                             display: "flex",
                             justifyContent: "center",
                             alignItems: "center",
-                            fontSize: "12px",
+                            fontSize: "50%",
                             color: "#b0b0b0",
                             textAlign: "left",
                             width: "55%",
                             height: "120%",
                         }}
                     >
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                        minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                        aliquip ex ea commodo consequat. Duis aute irure dolor in
-                        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                        culpa qui officia deserunt mollit anim id est laborum.
+                        Here are the gallery of one global model and two cloud-resolving models, which aims to demonstrate different test cases run by these models. 
+                        <br/>
+                        If you want to know more about these models, please click the documentation or see the github code pages.
+                        
                     </b>
                 </StyledDiv>
                 
@@ -127,27 +124,32 @@ const OurWork = () => {
                             justifyContent: "space-between",
                             gap: "8%",
                             cursor: "pointer",
-                            // margin: "4%",
+                            // marginBottom: "4%",
                             width: "30%",
                             boxShadow: "1px 1px 5px rgba(0, 0, 0, 0.5)",
-                            // border: "1px solid #262b47"
+                            padding: "1%"
                         }}
                         onClick={onFrameContainer3Click}
                     >
                         <b
                             style={{
-                                marginTop: "3%",
-                                lineHeight: "48px",
+                                marginTop: "2%",
+                                lineHeight: "100%",
+                                textAlign: "center"
                             }}
                         >
-                            <p style={{ marginBlockStart: "0", marginBlockEnd: "0px" }}>
+                            <p style={{ marginBlockStart: "0", marginBlockEnd: "0px", fontSize: "80%"}}>
                                 Cubed Sphere
                             </p>
-                            <p style={{ marginBlockStart: "0", marginBlockEnd: "0px" }}>
+                            <p style={{ marginBlockStart: "0", marginBlockEnd: "0px", fontSize: "80%"}}>
                                 Shallow Water Model
                             </p>
                         </b>
-                        <img
+
+                        <p style={{fontSize: "50%", textAlign: "justify"}}>
+                            Based on 2nd order in time and 4th order in space finite difference method with A-grid, CSSWM is used to test different cases and will be used to construct more complicated GCM.
+                        </p>
+                        {/* <img
                             style={{
                                 // position: "relative",
                                 width: "80%",
@@ -158,7 +160,7 @@ const OurWork = () => {
                             }}
                             alt=""
                             src="../CSSWM/Cosine Ball/180/0/sphere_cartopy/h+wind.gif"
-                        />
+                        /> */}
                     </div>
 
                     <div
@@ -166,28 +168,36 @@ const OurWork = () => {
                             display: "flex",
                             flexDirection: "column",
                             alignItems: "center",
-                            justifyContent: "space-between",
+                            justifyContent: "center",
                             gap: "8%",
                             cursor: "pointer",
                             // marginBottom: "4%",
                             width: "30%",
                             boxShadow: "1px 1px 5px rgba(0, 0, 0, 0.5)",
+                            padding: "1%"
                         }}
                         onClick={onFrameContainer2Click}
                     >
                         <b
                             style={{
                                 marginTop: "2%",
-                                lineHeight: "48px",
+                                lineHeight: "100%",
+                                textAlign: "center"
                             }}
                         >
-                            <p style={{ marginBlockStart: "0", marginBlockEnd: "0px" }}>
+                            <p style={{ marginBlockStart: "0", marginBlockEnd: "0px", fontSize: "80%" }}>
                                 Two-dimensional
                             </p>
-                            <p style={{ marginBlockStart: "0", marginBlockEnd: "0px" }}>
+                            <p style={{ marginBlockStart: "0", marginBlockEnd: "0px", fontSize: "80%" }}>
                                 Vector Vorticity Model
                             </p>
                         </b>
+
+                        <p style={{fontSize: "50%", textAlign: "justify"}}>
+                            This is a 2D cloud resolving model based on the vorticity equation with anelastic approximation and aims to combine with CSSWM.
+                        </p>
+                    
+                        {/* 
                         <img
                             style={{
                                 // position: "relative",
@@ -199,7 +209,7 @@ const OurWork = () => {
                             }}
                             alt=""
                             src="../2DVVM/Water/qc+qr+th+u+w.gif"
-                        />
+                        /> */}
                     </div>
 
 
@@ -208,29 +218,36 @@ const OurWork = () => {
                             display: "flex",
                             flexDirection: "column",
                             alignItems: "center",
-                            justifyContent: "space-between",
+                            justifyContent: "center",
                             gap: "8%",
                             cursor: "pointer",
                             // marginBottom: "4%",
                             width: "30%",
                             boxShadow: "1px 1px 5px rgba(0, 0, 0, 0.5)",
+                            padding: "1%"
                         }}
                         onClick={onFrameContainer1Click}
                     >
                         <b
                             style={{
-                                marginTop: "3%",
-                                lineHeight: "48px",
+                                marginTop: "2%",
+                                lineHeight: "100%",
+                                textAlign: "center"
                             }}
                         >
-                            <p style={{ marginBlockStart: "0", marginBlockEnd: "0px" }}>
+                            <p style={{ marginBlockStart: "0", marginBlockEnd: "0px", fontSize: "80%" }}>
                                 Two-dimensional
                             </p>
-                            <p style={{ marginBlockStart: "0", marginBlockEnd: "0px" }}>
+                            <p style={{ marginBlockStart: "0", marginBlockEnd: "0px", fontSize: "80%" }}>
                                 Quasi Compressible Model
                             </p>
                         </b>
-                        <img
+
+                        <p style={{fontSize: "50%", textAlign: "justify"}}>
+                            This is a 2D cloud resolving model based on the pressure momentum equation with quasi compressible approximation and aims to compare with 2DVVM.
+                        </p>
+
+                        {/* <img
                             style={{
                                 // position: "relative",
                                 width: "80%",
@@ -241,7 +258,7 @@ const OurWork = () => {
                             }}
                             alt=""
                             src="../CSSWM/Cosine Ball/180/0/sphere_cartopy/h+wind.gif"
-                        />
+                        /> */}
                     </div>
                 </div>
                 
