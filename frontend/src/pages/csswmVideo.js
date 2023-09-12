@@ -50,6 +50,11 @@ const dict = {
     "../CSSWM/Geostrophic/180/pi:2/sphere_cartopy/zeta.mov": "https://www.youtube.com/embed/9UjxU1YosU4?si=hXExHO4YALmLCo71",
     "../CSSWM/Geostrophic/90/pi:2/sphere_cartopy/zeta.mov": "https://www.youtube.com/embed/49n2OhQ6-Ls?si=RJo6yBt1-xj7OHBK",
     "../CSSWM/Geostrophic/45/pi:2/sphere_cartopy/zeta.mov": "https://www.youtube.com/embed/CUv1pX163pQ?si=0RtyKSLCAqxkcRol",
+
+    "../CSSWM/grid/longitudeOnCube.png": "../longitudeOnCube.png",
+    "../CSSWM/grid/latitudeOnCube.png": "../latitudeOnCube.png",
+    "../CSSWM/grid/xOnCube.png": "../xOnCube.png",
+    "../CSSWM/grid/yOnCube.png": "../yOnCube.png",
 }
 
 const CsswmVideo = ({chooseCase, setCase}) => {
@@ -198,14 +203,14 @@ const CsswmVideo = ({chooseCase, setCase}) => {
                     style={{width: "50%"}}
                     // autoPlay 
                     // controls 
-                    src={src}
+                    src={dict[src]}
                 />
                 <CardMedia
                     component="img"
                     style={{width: "50%"}}
                     // autoPlay 
                     // controls 
-                    src={src2}
+                    src={dict[src2]}
                 />
             </div>
         )
