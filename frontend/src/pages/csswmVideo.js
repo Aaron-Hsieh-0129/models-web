@@ -9,6 +9,7 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 
+
 const dict = {
     "../CSSWM/Barotropic/180/sphere_cartopy/zeta.mov": "https://www.youtube.com/embed/AtbRhFcyLSg?si=LeHER1fPnGJlOefp",
     "../CSSWM/Barotropic/90/sphere_cartopy/zeta.mov": "https://www.youtube.com/embed/BgVruDFHn9I?si=TT21IBelURycO1Uv",
@@ -51,10 +52,10 @@ const dict = {
     "../CSSWM/Geostrophic/90/pi:2/sphere_cartopy/zeta.mov": "https://www.youtube.com/embed/49n2OhQ6-Ls?si=RJo6yBt1-xj7OHBK",
     "../CSSWM/Geostrophic/45/pi:2/sphere_cartopy/zeta.mov": "https://www.youtube.com/embed/CUv1pX163pQ?si=0RtyKSLCAqxkcRol",
 
-    "../CSSWM/grid/longitudeOnCube.png": "../longitudeOnCube.png",
-    "../CSSWM/grid/latitudeOnCube.png": "../latitudeOnCube.png",
-    "../CSSWM/grid/xOnCube.png": "../xOnCube.png",
-    "../CSSWM/grid/yOnCube.png": "../yOnCube.png",
+    "../CSSWM/grid/longitudeOnCube.png": "longitudeOnCube.png",
+    "../CSSWM/grid/latitudeOnCube.png": "latitudeOnCube.png",
+    "../CSSWM/grid/xOnCube.png": "xOnCube.png",
+    "../CSSWM/grid/yOnCube.png": "yOnCube.png"
 }
 
 const CsswmVideo = ({chooseCase, setCase}) => {
@@ -309,7 +310,7 @@ const CsswmVideo = ({chooseCase, setCase}) => {
                 >
                     
                     <p>Variable</p>
-                    <div style={{display: "flex", marginLeft: "3.7%"}}>
+                    <div style={{display: "flex", marginLeft: "3.2%"}}>
                         <FormControlLabel value="zeta" control={<Radio {...controlVarProp('zeta')}/>} label="ζ + h + wind" />
                     </div>
                     {/* <FormControlLabel value="h+wind" control={<Radio {...controlVarProp('h+wind')}/>} label="h + wind" /> */}
@@ -328,7 +329,7 @@ const CsswmVideo = ({chooseCase, setCase}) => {
                 >
                     
                     <p>Variable</p>
-                    <div style={{display: "flex", marginLeft: "3.7%"}}>
+                    <div style={{display: "flex", marginLeft: "3.2%"}}>
                         <FormControlLabel value="h+wind" control={<Radio {...controlVarProp('h+wind')}/>} label="h + wind" />
                     </div>
                 </RadioGroup>
@@ -352,7 +353,7 @@ const CsswmVideo = ({chooseCase, setCase}) => {
                 >
                     
                     <p>α (direction)</p>
-                    <div style={{display: "flex", marginLeft: "1%"}}>
+                    <div style={{display: "flex", marginLeft: "1.2%"}}>
                         <FormControlLabel value="0" control={<Radio {...controlAlphaProp('0')}/>} label="0" />
                         <FormControlLabel value="pi:2" control={<Radio {...controlAlphaProp('pi:2')}/>} label="pi/2" />
                         <FormControlLabel value="pi:4" control={<Radio {...controlAlphaProp('pi:4')}/>} label="pi/4" />

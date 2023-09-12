@@ -107,7 +107,7 @@ const OurWork = () => {
                         marginBottom: "4%",
                     }}
                 >
-                    <img alt="" style={{}} src="../vector-11.svg"/>
+                    <img alt="" style={{}} src="vector-11.svg"/>
                 </StyledDiv>
                 <div 
                     style={{
