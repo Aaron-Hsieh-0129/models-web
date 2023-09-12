@@ -9,6 +9,18 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 
+const dict = {
+    "../2DVVM/Advection/u/qc+qr+th+u+w.mov": "https://www.youtube.com/embed/Vi9EUY5r9vM?si=35pBzObnGxkzUqfB",
+    "../2DVVM/Dry/qc+qr+th+u+w.mov": "https://www.youtube.com/embed/_kMCv7yszBk?si=YNfVaNYpqSmkO9s7",
+    "../2DVVM/Dry/zeta.mov": "https://www.youtube.com/embed/m0XSXb3JNDQ?si=MXeIO2oMfeS3hacm",
+
+    "../2DVVM/Water/qc+qr+th+u+w.mov": "https://www.youtube.com/embed/jow1WxKiSN8?si=vtYHVjat5HI59WVd",
+    "../2DVVM/Water/zeta.mov": "https://www.youtube.com/embed/zTbMVUMof40?si=Cj9pI1HiqaaNJDyb",
+
+    "../2DVVM/Shear/qc+qr+th+u+w.mov": "https://www.youtube.com/embed/rtyHQa--FCo?si=ftHgSs6vAIGMVtkd",
+    "../2DVVM/Shear/zeta.mov": "https://www.youtube.com/embed/f2icjrLrAi4?si=h5yCPC_BKirZUEFw"
+}
+
 const VVMVideo = ({chooseCase, setCase}) => {
     console.log(chooseCase)
 
@@ -62,13 +74,14 @@ const VVMVideo = ({chooseCase, setCase}) => {
 
     const VideoCard = (src) => {
         console.log(src)
+        console.log(dict[src])
         return (
             <CardMedia
-                component="video"
-                style={{}}
+                component="iframe"
+                style={{height: "700px"}}
                 autoPlay 
                 controls 
-                src={src}
+                src={dict[src]}
             />
         )
     }
@@ -89,8 +102,8 @@ const VVMVideo = ({chooseCase, setCase}) => {
                 >
                     
                     <p>Variable &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</p>
-                    <FormControlLabel value="qc+qr+th+u+w" control={<Radio {...controlVarProp('qc+qr+th+u+w')}/>} label="qc+qr+th+u+w" />
-                    <FormControlLabel value="zeta" control={<Radio {...controlVarProp('zeta')}/>} label="zeta" />
+                    <FormControlLabel value="qc+qr+th+u+w" control={<Radio {...controlVarProp('qc+qr+th+u+w')}/>} label="qc + qr + θ' + u + w" />
+                    <FormControlLabel value="zeta" control={<Radio {...controlVarProp('zeta')}/>} label="ζ" />
                 </RadioGroup>
             </FormControl>
         )
@@ -106,7 +119,7 @@ const VVMVideo = ({chooseCase, setCase}) => {
                 >
                     
                     <p>Variable &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</p>
-                    <FormControlLabel value="qc+qr+th+u+w" control={<Radio {...controlVarProp('qc+qr+th+u+w')}/>} label="qc+qr+th+u+w" />
+                    <FormControlLabel value="qc+qr+th+u+w" control={<Radio {...controlVarProp('qc+qr+th+u+w')}/>} label="θ' + wind" />
                 </RadioGroup>
             </FormControl>
         )
@@ -127,9 +140,10 @@ const VVMVideo = ({chooseCase, setCase}) => {
                     style={{display: "flex", justifyContent: "flex-start"}}
                 >
                     
-                    <p>Variable &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</p>
+                    <p>Direction &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</p>
                     <FormControlLabel value="u" control={<Radio {...controlAdvectionProp('u')}/>} label="u" />
-                    <FormControlLabel value="w" control={<Radio {...controlAdvectionProp('w')}/>} label="w" />
+                    {/* TODO: Fix the video*/}
+                    {/* <FormControlLabel value="w" control={<Radio {...controlAdvectionProp('w')}/>} label="w" /> */}
                 </RadioGroup>
             </FormControl>
         )
@@ -156,7 +170,7 @@ const VVMVideo = ({chooseCase, setCase}) => {
                         }
 
                         {
-                            chooseCase === "Advection" 
+                            chooseCase === "Advection"
                             ? var2Radio()
                             : varRadio()
                         }

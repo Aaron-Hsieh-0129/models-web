@@ -3,7 +3,7 @@ import { useState } from "react";
 import Content from "./csswmContent";
 import VVMVideo from "./vvmVideo";
 
-const CSSWM = () => {
+const VVM = () => {
     const [chooseCaseVVM, setCaseVVM] = useState('Dry');
 
     return (
@@ -57,4 +57,4 @@ const CSSWM = () => {
     );
 };
 
-export default CSSWM;
+export default VVM;
