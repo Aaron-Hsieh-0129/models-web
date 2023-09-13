@@ -10,22 +10,15 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 
 const dict = {
-    "../2DVVM/Advection/u/qc+qr+th+u+w.mov": "https://www.youtube.com/embed/Vi9EUY5r9vM?si=35pBzObnGxkzUqfB",
-    "../2DVVM/Dry/qc+qr+th+u+w.mov": "https://www.youtube.com/embed/_kMCv7yszBk?si=YNfVaNYpqSmkO9s7",
-    "../2DVVM/Dry/zeta.mov": "https://www.youtube.com/embed/m0XSXb3JNDQ?si=MXeIO2oMfeS3hacm",
-
-    "../2DVVM/Water/qc+qr+th+u+w.mov": "https://www.youtube.com/embed/jow1WxKiSN8?si=vtYHVjat5HI59WVd",
-    "../2DVVM/Water/zeta.mov": "https://www.youtube.com/embed/zTbMVUMof40?si=Cj9pI1HiqaaNJDyb",
-
-    "../2DVVM/Shear/qc+qr+th+u+w.mov": "https://www.youtube.com/embed/rtyHQa--FCo?si=ftHgSs6vAIGMVtkd",
-    "../2DVVM/Shear/zeta.mov": "https://www.youtube.com/embed/f2icjrLrAi4?si=h5yCPC_BKirZUEFw"
+    "../2DQCM/Dry/qc+qr+th+u+w.mov": "https://www.youtube.com/embed/Wu-skqBpk1U?si=GEzT_-KgxRm4W0q6",
+    "../2DQCM/Water/qc+qr+th+u+w.mov": "https://www.youtube.com/embed/3NeV51XtfBM?si=i_pEuro2cL5hTBcS",
+    "../2DQCM/Shear/qc+qr+th+u+w.mov": "https://www.youtube.com/embed/RBvMHXqu_JM?si=n1XxcGJZ8k6bHU70",
 }
 
-const VVMVideo = ({chooseCase, setCase}) => {
+const QCMVideo = ({chooseCase, setCase}) => {
     console.log(chooseCase)
 
-    const [videoSrc, setVideoSrc] = useState('../2DVVM/Dry/qc+qr+th+u+w.mov');
-    const [videoSrcWithAlpha, setVideoSrcWithAlpha] = useState('../2DVVM/Advection/u/qc+qr+th+u+w.mov');
+    const [videoSrc, setVideoSrc] = useState('../2DQCM/Dry/qc+qr+th+u+w.mov');
 
     // const [chooseCase, setCase] = useState('Barotropic');
     const handleChangeCase = (event, newValue) => {
@@ -33,11 +26,6 @@ const VVMVideo = ({chooseCase, setCase}) => {
         let tmp = {target: {value: "qc+qr+th+u+w"}}
         handleChangeVar(tmp); // to avoid error because there is no zeta in other case
         setVideoSrc((cur) => {
-            let tmp = cur.split('/');
-            tmp[2] = newValue;
-            return tmp.join('/');
-        });
-        setVideoSrcWithAlpha((cur) => {
             let tmp = cur.split('/');
             tmp[2] = newValue;
             return tmp.join('/');
@@ -53,22 +41,6 @@ const VVMVideo = ({chooseCase, setCase}) => {
             let tmp = cur.split('/');
             tmp[3] = newValue + ".mov";
             return tmp.join('/');
-        });
-        setVideoSrcWithAlpha(() => {
-            let out = videoSrcWithAlpha.split('/');
-            out[4] = newValue + ".mov";
-            return out.join('/')
-        });
-    };
-
-    const [advection, setAdvection] = useState('u');
-    const handleChangeAdvection = (event) => {
-        let newValue = event.target.value;
-        setAdvection(newValue);
-        setVideoSrcWithAlpha(() => {
-            let out = videoSrcWithAlpha.split('/');
-            out[3] = newValue;
-            return out.join('/')
         });
     };
 
@@ -104,12 +76,11 @@ const VVMVideo = ({chooseCase, setCase}) => {
                     <p>Variable</p>
                     <div style={{display: "flex", marginLeft: "2%"}}>
                         <FormControlLabel value="qc+qr+th+u+w" control={<Radio {...controlVarProp('qc+qr+th+u+w')}/>} label="qc + qr + θ' + u + w" />
-                        <FormControlLabel value="zeta" control={<Radio {...controlVarProp('zeta')}/>} label="ζ" />
                     </div>
                 </RadioGroup>
             </FormControl>
         )
-    };
+    }
     const var2Radio = () => {
         return (
             <FormControl>
@@ -129,39 +100,12 @@ const VVMVideo = ({chooseCase, setCase}) => {
         )
     };
 
-    const controlAdvectionProp = (item) => ({
-        checked: advection === item,
-        onChange: handleChangeAdvection,
-        value: item,
-    });
-    const advectionRadio = () => {
-        return (
-            <FormControl>
-                <RadioGroup
-                    row
-                    aria-labelledby="demo-row-radio-buttons-group-label"
-                    name="row-radio-buttons-group"
-                    style={{display: "flex", justifyContent: "flex-start"}}
-                >
-                    
-                    <p>Direction</p>
-                    <div style={{display: "flex", marginLeft: "1.6%"}}>
-                        <FormControlLabel value="u" control={<Radio {...controlAdvectionProp('u')}/>} label="u" />
-                    </div>
-                    {/* TODO: Fix the video*/}
-                    {/* <FormControlLabel value="w" control={<Radio {...controlAdvectionProp('w')}/>} label="w" /> */}
-                </RadioGroup>
-            </FormControl>
-        )
-    };
-
 
     return (
         <Box sx={{ width: '100%', typography: 'body1' }}>
             <TabContext value={chooseCase} >
                 <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                     <TabList onChange={handleChangeCase}>
-                        <Tab style={{textTransform: "none"}} label="Advection" value="Advection" />
                         <Tab style={{textTransform: "none"}} label="Dry Warm Bubble" value="Dry" />
                         <Tab style={{textTransform: "none"}} label="Physics + Warm Bubble" value="Water" />
                         <Tab style={{textTransform: "none"}} label="Physics + Warm Bubble + Shear" value="Shear" />
@@ -170,21 +114,13 @@ const VVMVideo = ({chooseCase, setCase}) => {
 
                     <div style={{display: "flex", flexDirection: "column", marginLeft: "2%"}}>
                         {
-                            chooseCase === "Advection"
-                            ? advectionRadio()
-                            : <></>
-                        }
-
-                        {
-                            chooseCase === "Advection" || chooseCase === "Dry"
+                            chooseCase === "Dry"
                             ? var2Radio()
                             : varRadio()
                         }
                     </div>
                     {
-                        chooseCase === "Advection"
-                        ? VideoCard(videoSrcWithAlpha)
-                        : VideoCard(videoSrc)
+                        VideoCard(videoSrc)
                     }
                 </Box>
 
@@ -194,4 +130,4 @@ const VVMVideo = ({chooseCase, setCase}) => {
     )
 }
 
-export default VVMVideo;
+export default QCMVideo;

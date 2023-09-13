@@ -49,7 +49,6 @@ const VVM = () => {
                 }}
             >
                 <VVMVideo setCase={setCaseVVM} chooseCase={chooseCaseVVM}/>
-                {/* <CsswmVideo setCase={setCase} chooseCase={chooseCase}/> */}
                 
                 <Content chooseCase={chooseCaseVVM} />
                 
