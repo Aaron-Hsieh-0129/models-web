@@ -9,7 +9,6 @@ import QCM from "./pages/QCM";
 import CSSWM from "./pages/CSSWM";
 import VVM from "./pages/VVM";
 import OurWork from "./pages/OurWork";
-import DocCSSWM from "./pages/Documentation/DocCSSWM";
 import { useEffect } from "react";
 
 function App() {
