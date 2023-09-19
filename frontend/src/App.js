@@ -78,7 +78,7 @@ function App() {
 
             <Route path="/our-work" element={<OurWork />} />
 
-            <Route path="/doc-csswm" element={<DocCSSWM />} />
+            {/* <Route path="/doc-csswm" element={<DocCSSWM />} /> */}
         </Routes>
     );
 }
