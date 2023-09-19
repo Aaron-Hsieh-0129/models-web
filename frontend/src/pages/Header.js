@@ -29,11 +29,15 @@ const Header = () => {
         navigate("/");
     }, [navigate]);
 
+    // const onDocCSSWMClick = useCallback(() => {
+    //     navigate("/doc-csswm");
+    //     setOpen(false);
+    //     setAnchorEl(null);
+    // }, [navigate]);
+
     const onDocCSSWMClick = useCallback(() => {
-        navigate("/doc-csswm");
-        setOpen(false);
-        setAnchorEl(null);
-    }, [navigate]);
+        window.open('https://aaron-hsieh-0129.github.io/documentation-of-CSSWM/html/index.html');
+    })
 
     const [open, setOpen] = useState(false);
     const [anchorEl, setAnchorEl] = useState(null);
