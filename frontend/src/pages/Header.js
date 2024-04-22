@@ -40,6 +40,10 @@ const Header = () => {
         window.open('https://aaron-hsieh-0129.github.io/documentation-of-CSSWM/html/index.html');
     })
 
+    const onDoc2DVVMClick = useCallback(() => {
+        window.open('https://aaron-hsieh-0129.github.io/2D-Vector-Vorticity-Model/index.html');
+    })
+
     const [open, setOpen] = useState(false);
     const [anchorEl, setAnchorEl] = useState(null);
 
@@ -78,7 +82,7 @@ const Header = () => {
                     <Button key={3} onClick={onDocCSSWMClick} style={{color: "black", textTransform: "none"}}>
                         Cubed Sphere Shallow Water Model
                     </Button>
-                    <Button key={4} onClick={handleMenuClose} style={{color: "black", textTransform: "none"}} >
+                    <Button key={4} onClick={onDoc2DVVMClick} style={{color: "black", textTransform: "none"}} >
                         2D Vector Vorticity Model
                     </Button>
                 </div>
