@@ -367,7 +367,7 @@ const CsswmVideo = ({chooseCase, setCase}) => {
         <Box sx={{ width: '100%', typography: 'body1' }}>
             <TabContext value={chooseCase} >
                 <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                    <TabList onChange={handleChangeCase}>
+                    <TabList variant="scrollable" scrollButtons="auto" onChange={handleChangeCase}>
                         <Tab style={{textTransform: "none"}} label="Grid" value="Grid" />
                         <Tab style={{textTransform: "none"}} label="Barotropic" value="Barotropic" />
                         <Tab style={{textTransform: "none"}} label="Gravity Wave" value="Gravity Wave" />

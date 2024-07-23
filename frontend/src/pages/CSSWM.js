@@ -9,48 +9,48 @@ const CSSWM = () => {
     return (
         <div
             style={{
-                position: "absolute",
                 backgroundImage: "url('home-page@3x.png')",
-                backgroundSize: "100%",
+                backgroundSize: "cover",
                 width: "100%",
-                height: "23%",
+                minHeight: "100vh",
                 fontSize: "24px",
                 color: "#002b80",
-                fontFamily: "Inter",
+                fontFamily: "Inter, sans-serif",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                textAlign: "center",
+                padding: "20px",
+                boxSizing: "border-box"
             }}
         >
             <Header />
 
             <b
                 style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    marginTop: "2%",
-                    fontSize: "200%",
-                    lineHeight: "100%",
+                    fontSize: "2rem",
+                    lineHeight: "1.2",
                     color: "#000",
-                    marginBottom: "2%",
-                    
+                    margin: "20px 0",
                 }}
             >
-                    Cubed Sphere Shallow Water Model
+                Cubed Sphere Shallow Water Model
             </b>
 
             <div 
                 style={{
-                    top: "100%",
-                    position: "absolute",
+                    width: "100%",
+                    maxWidth: "1200px",
                     display: "flex",
                     flexDirection: "column",
-                    justifyContent: "center",
                     alignItems: "center",
-                    padding: "8px"
+                    padding: "8px",
+                    boxSizing: "border-box"
                 }}
             >
                 <CsswmVideo setCase={setCase} chooseCase={chooseCase}/>
                 
                 <Content chooseCase={chooseCase} />
-                
             </div>
         </div>
     );

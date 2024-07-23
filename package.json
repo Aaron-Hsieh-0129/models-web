@@ -14,6 +14,7 @@
     },
     "homepage": "https://Aaron-Hsieh-0129.github.io/models-web.git",
     "dependencies": {
+        "caniuse-lite": "^1.0.30001643",
         "gh-pages": "^5.0.0"
     }
 }

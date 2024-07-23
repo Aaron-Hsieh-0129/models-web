@@ -7,7 +7,7 @@ import { CardMedia } from "@mui/material";
 const pulse = keyframes`
     0% {
         opacity: 0;
-        transform: scale(0.5, 0.5);
+        transform: scale(0.95, 0.95);
     }
 
     100% {
@@ -16,8 +16,149 @@ const pulse = keyframes`
     }
 `;
 
-const StyledDiv = styled("div")`
+const fadeIn = keyframes`
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+`;
+
+const HomePageContainer = styled.div`
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(#ffffff, #e0f7fa, #80d8ff);
+    font-size: 24px;
+    color: #002b80;
+    font-family: "Inter", sans-serif;
+    animation: ${fadeIn} 1s ease-in-out;
+
+    @media (max-width: 768px) {
+        font-size: 18px;
+    }
+`;
+
+const BodyContainer = styled.div`
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 5%;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        margin-top: 10%;
+    }
+`;
+
+const StyledDiv = styled.div`
     animation: ${pulse} 1.2s ease-in-out;
+    width: 40%;
+    font-size: 2rem;
+    line-height: 1.3;
+    color: #002b80;
+    text-align: center;
+
+    @media (max-width: 768px) {
+        width: 90%;
+        font-size: 1.5rem;
+    }
+
+    b {
+        display: block;
+    }
+
+    hr {
+        border: 2.5px solid #062c7b;
+        border-radius: 7px;
+    }
+`;
+
+const StyledCardMedia = styled(CardMedia)`
+    height: 400px;
+    width: 45%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+
+    @media (max-width: 768px) {
+        width: 90%;
+        height: auto;
+    }
+`;
+
+const FooterContainer = styled.div`
+    display: flex;
+    width: 100%;
+    height: auto;
+    bottom: 0;
+`;
+
+const FooterSection = styled(Link)`
+    flex: 1;
+    background-color: #e0f7fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 20px 0;
+    transition: background-color 0.3s;
+
+    &:hover {
+        background-color: #80d8ff;
+    }
+`;
+
+const FooterSectionGallery = styled.div`
+    flex: 1;
+    background-color: #005f99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    opacity: ${({ isHovering }) => (isHovering ? "1" : "0.8")};
+    transition: opacity 0.3s;
+    padding: 20px 0;
+
+    &:hover {
+        opacity: 1;
+    }
+`;
+
+const FooterContent = styled.div`
+    border-radius: 14px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 300px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 12px;
+    color: #3c3c3c;
+    padding: 20px;
+
+    img {
+        margin-bottom: 10px;
+    }
+
+    b {
+        font-size: 24px;
+        color: #002b80;
+    }
+
+    div {
+        font-size: 14px;
+
+        @media (max-width: 768px) {
+            font-size: 12px;
+        }
+    }
 `;
 
 const HomePage = () => {
@@ -32,150 +173,54 @@ const HomePage = () => {
         setIsHovering(false);
     };
 
-
     const onRectangle1Click = useCallback(() => {
         navigate("/our-work");
     }, [navigate]);
 
-    const randomVideos = ['https://www.youtube.com/embed/69U_2NUdaQM', 'https://www.youtube.com/embed/CUv1pX163pQ', 'https://www.youtube.com/embed/G4hVWNGEAEc', 'https://www.youtube.com/embed/zSepHC5psAc', 'https://www.youtube.com/embed/CRdPHsxJojw']
-    // eslint-disable-next-line no-unused-vars
-    const [videoPath, setVideoPath] = useState(randomVideos[Math.floor(Math.random()*randomVideos.length)]);
+    const randomVideos = ['https://www.youtube.com/embed/69U_2NUdaQM', 'https://www.youtube.com/embed/CUv1pX163pQ', 'https://www.youtube.com/embed/G4hVWNGEAEc', 'https://www.youtube.com/embed/zSepHC5psAc', 'https://www.youtube.com/embed/CRdPHsxJojw'];
+    const [videoPath] = useState(randomVideos[Math.floor(Math.random() * randomVideos.length)]);
     
     return (
-        <div
-            style={{
-                position: "absolute",
-                backgroundImage: "url('home-page@3x.png')",
-                backgroundSize: "100%",
-                width: "100%",
-                height: "100%",
-                fontSize: "24px",
-                color: "#002b80",
-                fontFamily: "Inter",
-            }}
-        >
+        <HomePageContainer>
             <Header />
 
             {/* body */}
-            <div style={{display: "flex", justifyContent: "space-around", alignItems: "center", marginTop: "2%"}}>
-                <StyledDiv style={{width: "39%"}}>
-                    <b
-                        style={{
-                            fontSize: "200%",
-                            lineHeight: "130%",
-                            color: "#000",                            
-                        }}  
-                    >{`SWM on Cubed Sphere & 2D Cloud Resolving Models`}</b>
-                    <hr style={{border: "2.5px solid rgb(6, 44, 123)", borderRadius: "7px 7px 7px 7px"}} />
+            <BodyContainer>
+                <StyledDiv>
+                    <b>{`Shallow Water Model on Cubed Sphere &`}</b>
+                    <b>{`2D Cloud Resolving Models`}</b>
+                    <hr />
                 </StyledDiv>
                 
-                <CardMedia
+                <StyledCardMedia
                     component="iframe"
-                    style={{height: "400px", width: "45%"}}
                     autoPlay 
                     controls 
                     allowFullScreen
                     src={videoPath}
                 />
-                
-            </div>
+            </BodyContainer>
 
             {/* footer */}
-            <Link to="https://github.com/Aaron-Hsieh-0129" target="_blank" rel="noopener noreferrer">
-            <div
-                style={{
-                    position: "absolute",
-                    bottom: "0%",
-                    backgroundColor: "#dcccbc",
-                    width: "50%",
-                    height: "28%",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                }}
+            <FooterContainer>
+                <FooterSection to="https://github.com/Aaron-Hsieh-0129" target="_blank" rel="noopener noreferrer">
+                    <FooterContent>
+                        <img alt="" src="../frame-5.svg" />
+                        <b>Aaron Hsieh</b>
+                        <div>National Taiwan University Atmospheric Science</div>
+                    </FooterContent>
+                </FooterSection>
                 
-            >
-            
-                <div
-                    style={{
-                        borderRadius: "14px",
-                        backgroundColor: "rgba(255, 255, 255, 0.89)",
-                        boxShadow: "2px 2px 2px rgba(0, 0, 0, 0.25)",
-                        width: "32%",
-                        height: "65%",
-                        display: "flex",
-                        flexDirection: "column",
-                        boxSizing: "border-box",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        textAlign: "center",
-                        fontSize: "12px",
-                        color: "#3c3c3c",
-                    }}
+                <FooterSectionGallery
+                    isHovering={isHovering}
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                    onClick={onRectangle1Click}
                 >
-                    <div
-                        style={{
-                            display: "flex",
-                            flexDirection: "column"
-
-                        }}
-                    >
-                        <div>
-                            <img alt="" src="../frame-5.svg" />
-                        </div>
-                        <b
-                            style={{
-                                fontSize: "24px",
-                                color: "#002b80",
-                            }}
-                        >
-                            Aaron Hsieh
-                        </b>
-                        <div style={{fontSize: "14px"}}>
-                            National Taiwan University Atmospheric Science
-                        </div>
-                        
-                        
-                    </div>
-                </div>
-            </div>
-            </Link>
-            
-            <div
-                style={{
-                    position: "absolute",
-                    left: "50%",
-                    bottom: "0%",
-                    backgroundColor: "#55678a",
-                    width: "50%",
-                    height: "28%",
-                    cursor: "pointer",
-                    opacity: isHovering ? "1" : "0.8",
-                    // borderRadius: isHovering ? "10%" : "",
-                    transition: "0.5s",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center"
-                }}
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-                onClick={onRectangle1Click}
-            >
-                <b
-                    style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        fontSize: "50px",
-                        // lineHeight: "39px",
-                        color: "rgba(255, 255, 255, 0.89)",
-                        justifyContent: "center",
-                        alignItems: "center"
-                    }}
-                >
-                    Gallery
-                </b>
-            </div>
-        </div>
+                    <b style={{color: "#ffffff", fontSize: "1.5rem"}}>Gallery</b>
+                </FooterSectionGallery>
+            </FooterContainer>
+        </HomePageContainer>
     );
 };
 
