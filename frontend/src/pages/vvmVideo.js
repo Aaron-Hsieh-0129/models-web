@@ -160,7 +160,7 @@ const VVMVideo = ({chooseCase, setCase}) => {
         <Box sx={{ width: '100%', typography: 'body1' }}>
             <TabContext value={chooseCase} >
                 <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                    <TabList onChange={handleChangeCase}>
+                    <TabList variant="scrollable" scrollButtons="auto"  onChange={handleChangeCase}>
                         <Tab style={{textTransform: "none"}} label="Advection" value="Advection" />
                         <Tab style={{textTransform: "none"}} label="Dry Warm Bubble" value="Dry" />
                         <Tab style={{textTransform: "none"}} label="Physics + Warm Bubble" value="Water" />
