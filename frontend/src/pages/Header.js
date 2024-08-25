@@ -34,6 +34,29 @@ const NavItem = styled.div`
     }
 `;
 
+const CenteredContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    margin-top: 3%;
+
+    @media (max-width: 768px) {
+        margin-top: 10px; /* Adjust margin for smaller screens if needed */
+    }
+`;
+
+const HeaderTitle = styled.b`
+    color: #002b80;
+    font-size: 120%;
+    text-align: center;
+
+    @media (max-width: 768px) {
+        font-size: 100%; /* Adjust font size for smaller screens if needed */
+    }
+`;
+
 const UL = styled.div`
     display: block;
     text-decoration: none;
@@ -89,6 +112,10 @@ const Header = () => {
         window.open('https://aaron-hsieh-0129.github.io/2D-Vector-Vorticity-Model/index.html');
     });
 
+    const onReferencesListClick = useCallback(() => {
+        navigate("/references"); // Navigate to the References List page
+    }, [navigate]);
+
     const [open, setOpen] = useState(false);
     const [anchorEl, setAnchorEl] = useState(null);
     const [hoverNow, setHoverNow] = useState();
@@ -128,15 +155,15 @@ const Header = () => {
                     </Button>
                 </div>
             );
-        } else if (hoverNow === "About") {
+        } else if (hoverNow === "References") {
             return (
                 <div style={{ display: "flex", flexDirection: "column" }}>
-                    <Button key={5} onClick={handleMenuClose} style={{ color: "black", textTransform: "none" }}>
-                        Unavailable Now
+                    <Button key={5} onClick={onReferencesListClick} style={{ color: "black", textTransform: "none" }}>
+                        References List
                     </Button>
-                    <Button key={6} onClick={handleMenuClose} style={{ color: "black", textTransform: "none" }}>
+                    {/* <Button key={6} onClick={handleMenuClose} style={{ color: "black", textTransform: "none" }}>
                         Unavailable Now
-                    </Button>
+                    </Button> */}
                 </div>
             );
         }
@@ -145,7 +172,9 @@ const Header = () => {
     return (
         <Navbar onMouseLeave={handleMenuClose}>
             <NavItem onClick={onAtmosphericModelsClick}>
-                <b style={{color: "#002b80", fontSize: "120%", justifyContent: "center"}}>Tropical Multiscale Interaction Framework</b>
+                <CenteredContainer>
+                    <HeaderTitle>Tropical Multiscale Interaction Framework</HeaderTitle>
+                </CenteredContainer>
             </NavItem>
             <NavItem>
                 <UL key="Introduction" onMouseOver={handleMenuOpen}>Introduction</UL>
@@ -154,7 +183,7 @@ const Header = () => {
                 <UL key="Documentation" onMouseOver={handleMenuOpen}>Documentation</UL>
             </NavItem>
             <NavItem>
-                <UL key="About" onMouseOver={handleMenuOpen}>About</UL>
+                <UL key="References" onMouseOver={handleMenuOpen}>References</UL>
             </NavItem>
             <RunButton onClick={handleButtonOnClick}>
                 <div key="Run">Run Models</div>

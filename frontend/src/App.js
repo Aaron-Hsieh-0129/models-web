@@ -8,6 +8,7 @@ import HomePage from "./pages/HomePage";
 import CSSWM from "./pages/CSSWM";
 import VVM from "./pages/VVM";
 import OurWork from "./pages/OurWork";
+import References from "./pages/References";
 import { useEffect } from "react";
 
 function App() {
@@ -69,6 +70,8 @@ function App() {
             <Route path="/vvm" element={<VVM />} />
 
             <Route path="/our-work" element={<OurWork />} />
+
+            <Route path="/references" element={<References />} />
         </Routes>
     );
 }
