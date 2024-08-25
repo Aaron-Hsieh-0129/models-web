@@ -55,7 +55,12 @@ const dict = {
     "../CSSWM/grid/longitudeOnCube.png": "longitudeOnCube.png",
     "../CSSWM/grid/latitudeOnCube.png": "latitudeOnCube.png",
     "../CSSWM/grid/xOnCube.png": "xOnCube.png",
-    "../CSSWM/grid/yOnCube.png": "yOnCube.png"
+    "../CSSWM/grid/yOnCube.png": "yOnCube.png",
+
+    "../CSSWM/Sphere/180/sphere_cartopy/h+wind.mov": "https://www.youtube.com/embed/Jyq8D0wRARc",
+    "../CSSWM/Sphere/90/sphere_cartopy/h+wind.mov": "https://www.youtube.com/embed/Jyq8D0wRARc",
+    "../CSSWM/Sphere/45/sphere_cartopy/h+wind.mov": "https://www.youtube.com/embed/Jyq8D0wRARc",
+    
 }
 
 const CsswmVideo = ({chooseCase, setCase}) => {
@@ -190,6 +195,8 @@ const CsswmVideo = ({chooseCase, setCase}) => {
                 style={{height: "700px"}}
                 autoPlay 
                 controls 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
                 src={dict[src]}
             />
         )
@@ -369,6 +376,7 @@ const CsswmVideo = ({chooseCase, setCase}) => {
                 <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                     <TabList variant="scrollable" scrollButtons="auto" onChange={handleChangeCase}>
                         <Tab style={{textTransform: "none"}} label="Grid" value="Grid" />
+                        <Tab style={{textTransform: "none"}} label="Sphere" value="Sphere" />
                         <Tab style={{textTransform: "none"}} label="Barotropic" value="Barotropic" />
                         <Tab style={{textTransform: "none"}} label="Gravity Wave" value="Gravity Wave" />
                         <Tab style={{textTransform: "none"}} label="Cosine Ball" value="Cosine Ball" />
@@ -380,17 +388,19 @@ const CsswmVideo = ({chooseCase, setCase}) => {
 
                     <div style={{display: "flex", flexDirection: "column", marginLeft: "2%"}}>
                         {
-                            chooseCase === "Grid"
+                            chooseCase === "Grid" || chooseCase === "Sphere"
                             ? <></>
                             : resolutionRadio()
                         }
                         {
                             chooseCase === "Grid"
                             ? imgRadio()
-                            : projRadio()
+                            : chooseCase !== "Sphere"
+                              ? projRadio()
+                              : <></>
                         }
                         {
-                            chooseCase !== "Grid"
+                            chooseCase !== "Grid" && chooseCase !== "Sphere"
                             ?
                                 chooseCase === "Barotropic" || chooseCase === "Mountain" || chooseCase === "Geostrophic" 
                                 ? varRadio()
