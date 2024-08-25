@@ -53,6 +53,8 @@ const QCMVideo = ({chooseCase, setCase}) => {
                 style={{height: "700px"}}
                 autoPlay 
                 controls 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
                 src={dict[src]}
             />
         )

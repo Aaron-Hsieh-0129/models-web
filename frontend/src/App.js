@@ -5,7 +5,6 @@ import {
     useLocation,
 } from "react-router-dom";
 import HomePage from "./pages/HomePage";
-import QCM from "./pages/QCM";
 import CSSWM from "./pages/CSSWM";
 import VVM from "./pages/VVM";
 import OurWork from "./pages/OurWork";
@@ -28,10 +27,6 @@ function App() {
 
     switch (pathname) {
         case "/":
-            title = "";
-            metaDescription = "";
-            break;
-        case "/qcm":
             title = "";
             metaDescription = "";
             break;
@@ -68,8 +63,6 @@ function App() {
     return (
         <Routes>
             <Route path="/" element={<HomePage />} />
-
-            <Route path="/qcm" element={<QCM />} />
 
             <Route path="/csswm" element={<CSSWM />} />
 

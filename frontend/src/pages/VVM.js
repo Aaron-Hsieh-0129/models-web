@@ -3,6 +3,7 @@ import { useState } from "react";
 import Content from "./vvmContent";
 import VVMVideo from "./vvmVideo";
 import styled from 'styled-components';
+import QCMVideo from "./qcmVideo";
 
 const Container = styled.div`
     background-image: url('home-page@3x.png');
@@ -51,7 +52,33 @@ const ContentWrapper = styled.div`
     box-sizing: border-box;
 `;
 
+const ButtonGroup = styled.div`
+    margin-bottom: 20px;
+`;
+
+const Button = styled.button`
+    background-color: ${props => props.active ? '#0056b3' : '#007bff'};
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 10px;
+    border-radius: 5px;
+    opacity: ${props => props.active ? 1 : 0.6};
+
+    &:hover {
+        background-color: #0056b3;
+    }
+
+    &:focus {
+        outline: none;
+    }
+`;
+
 const VVM = () => {
+    const [chooseCloud, setCloud] = useState('VVM');
+    const [chooseCaseQCM, setCaseQCM] = useState('Dry');
     const [chooseCaseVVM, setCaseVVM] = useState('Dry');
 
     return (
@@ -62,9 +89,25 @@ const VVM = () => {
                 2-D Cloud Resolving Models
             </Title>
 
+            <ButtonGroup>
+                <Button active={chooseCloud === 'VVM'} onClick={() => setCloud('VVM')}>Vector Vorticity Model (VVM)</Button>
+                <Button active={chooseCloud === 'QCM'} onClick={() => setCloud('QCM')}>Quasi Compressible Model (QCM)</Button>
+            </ButtonGroup>
+
             <ContentWrapper>
-                <VVMVideo setCase={setCaseVVM} chooseCase={chooseCaseVVM} />
-                <Content chooseCase={chooseCaseVVM} />
+                {
+                    chooseCloud === 'QCM' 
+                    ?
+                        <div>
+                            <QCMVideo setCase={setCaseQCM} chooseCase={chooseCaseQCM} />
+                            <Content chooseCase={chooseCaseQCM} />
+                        </div>    
+                    : 
+                        <div>
+                            <VVMVideo setCase={setCaseVVM} chooseCase={chooseCaseVVM} />
+                            <Content chooseCase={chooseCaseVVM} />
+                        </div>
+                }
             </ContentWrapper>
         </Container>
     );

@@ -177,7 +177,7 @@ const HomePage = () => {
         navigate("/our-work");
     }, [navigate]);
 
-    const randomVideos = ['https://www.youtube.com/embed/69U_2NUdaQM', 'https://www.youtube.com/embed/CUv1pX163pQ', 'https://www.youtube.com/embed/G4hVWNGEAEc', 'https://www.youtube.com/embed/zSepHC5psAc', 'https://www.youtube.com/embed/CRdPHsxJojw'];
+    const randomVideos = ['https://www.youtube.com/embed/69U_2NUdaQM', 'https://www.youtube.com/embed/CUv1pX163pQ', 'https://www.youtube.com/embed/G4hVWNGEAEc', 'https://www.youtube.com/embed/zSepHC5psAc', 'https://www.youtube.com/embed/CRdPHsxJojw', 'https://www.youtube.com/embed/rdzmJJ8HzHc'];
     const [videoPath] = useState(randomVideos[Math.floor(Math.random() * randomVideos.length)]);
     
     return (
