@@ -55,7 +55,7 @@ const BodyContainer = styled.div`
 
 const StyledDiv = styled.div`
     animation: ${pulse} 1.2s ease-in-out;
-    width: 40%;
+    width: 50%;
     font-size: 2rem;
     line-height: 1.3;
     color: #002b80;
@@ -187,8 +187,10 @@ const HomePage = () => {
             {/* body */}
             <BodyContainer>
                 <StyledDiv>
-                    <b>{`Shallow Water Model on Cubed Sphere &`}</b>
-                    <b>{`2D Cloud Resolving Models`}</b>
+                    <b>{`Next-Generation Adaptive Convection-Circulation Coupling Framework`}</b>
+                    {`Cubed-Sphere Shallow Water Model & \n`}
+	    	    <br />
+                    {`2D Cloud Resolving Models`}
                     <hr />
                 </StyledDiv>
                 

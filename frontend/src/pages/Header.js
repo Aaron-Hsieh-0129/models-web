@@ -40,7 +40,6 @@ const CenteredContainer = styled.div`
     align-items: center;
     width: 100%;
     text-align: center;
-    margin-top: 3%;
 
     @media (max-width: 768px) {
         margin-top: 10px; /* Adjust margin for smaller screens if needed */
@@ -173,7 +172,7 @@ const Header = () => {
         <Navbar onMouseLeave={handleMenuClose}>
             <NavItem onClick={onAtmosphericModelsClick}>
                 <CenteredContainer>
-                    <HeaderTitle>Tropical Multiscale Interaction Framework</HeaderTitle>
+                    <HeaderTitle>NextACC</HeaderTitle>
                 </CenteredContainer>
             </NavItem>
             <NavItem>
