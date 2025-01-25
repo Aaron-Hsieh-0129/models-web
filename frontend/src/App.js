@@ -5,6 +5,7 @@ import {
     useLocation,
 } from "react-router-dom";
 import HomePage from "./pages/HomePage";
+import NextACC from "./pages/NextACC";
 import CSSWM from "./pages/CSSWM";
 import VVM from "./pages/VVM";
 import OurWork from "./pages/OurWork";
@@ -28,6 +29,10 @@ function App() {
 
     switch (pathname) {
         case "/":
+            title = "";
+            metaDescription = "";
+            break;
+        case "/nextacc":
             title = "";
             metaDescription = "";
             break;
@@ -64,6 +69,8 @@ function App() {
     return (
         <Routes>
             <Route path="/" element={<HomePage />} />
+
+            <Route path="/nextacc" element={<NextACC />} />
 
             <Route path="/csswm" element={<CSSWM />} />
 

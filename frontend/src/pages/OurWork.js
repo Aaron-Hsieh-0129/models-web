@@ -46,7 +46,7 @@ const Content = styled.div`
   width: 80%;
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.9);
-  margin-top: 10%;
+  margin-top: 7%;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
@@ -60,7 +60,7 @@ const StyledDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 5% 0;
+  margin: 1% 0;
   animation: ${pulse} 1.2s ease-in-out;
   width: 100%;
 
@@ -76,7 +76,7 @@ const Description = styled.b`
   align-items: center;
   font-size: 1.2rem;
   color: #002b80;
-  text-align: left;
+  text-align: center;
   width: 80%;
   margin: 2% 0;
 
@@ -93,6 +93,34 @@ const ModelCard = styled.div`
   justify-content: space-between;
   cursor: pointer;
   width: 35%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  margin: 0 1%;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+  background: #ffffff;
+  border-radius: 10px;
+  color: #002b80;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+
+  @media (max-width: 768px) {
+    width: 80%;
+    margin: 2% 0;
+  }
+`;
+
+const ModelCardNextACC = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  width: 50%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   padding: 20px;
   margin: 0 1%;
@@ -141,6 +169,10 @@ const ModelDescription = styled.p`
 const OurWork = () => {
   const navigate = useNavigate();
 
+  const onFrameContainer1Click = useCallback(() => {
+    navigate("/nextacc");
+  }, [navigate]);
+
   const onFrameContainer2Click = useCallback(() => {
     navigate("/vvm");
   }, [navigate]);
@@ -155,33 +187,46 @@ const OurWork = () => {
       <Content>
         <StyledDiv>
           <Description>
-            Here is a gallery featuring one global model and two cloud-resolving
-            models, showcasing various test cases run by these models. For more
-            information about these models, please refer to the documentation or
-            visit the GitHub code pages.
+            Models demonstration
+            NextACC demonstrates the coupled CSSWM and 2DVVMs 
+            <br />
+            CSSWM and 2DVVM and 2DQCM shows the individual models without coupling
           </Description>
+        </StyledDiv>
+
+        <StyledDiv>
+          <ModelCardNextACC onClick={onFrameContainer1Click}>
+            <ModelTitle>
+              <p>NextACC</p>
+            </ModelTitle>
+            <ModelDescription>
+              Next-Generation Adaptive Convection-Circulation Coupling Framework
+            </ModelDescription>
+          </ModelCardNextACC>
+
         </StyledDiv>
 
         <StyledDiv>
           <ModelCard onClick={onFrameContainer3Click}>
             <ModelTitle>
-              <p>Cubed Sphere Shallow Water Model</p>
+              <p>CSSWM</p>
             </ModelTitle>
             <ModelDescription>
-              Based on 2nd order in time and 4th order in space finite
-              difference method with A-grid, CSSWM serves as a simplification
-              for GCM.
+              Cubed-Sphere Shallow Water Model 
+              <br />
+              <br />
             </ModelDescription>
           </ModelCard>
 
           <ModelCard onClick={onFrameContainer2Click}>
             <ModelTitle>
-              <p>Two-dimensional Cloud Resolving Models</p>
+              <p>2DVVM and 2DQCM</p>
             </ModelTitle>
             <ModelDescription>
-              Here includes two 2D cloud resolving models based on the vorticity
-              equation with anelastic approximation and quasi compressible
-              approximation respectively.
+              2D Vector Vorticity Cloud-Resolving Model 
+              <br />
+              2D Quasi-Compressible Cloud-Resolving Model 
+
             </ModelDescription>
           </ModelCard>
         </StyledDiv>
